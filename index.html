@@ -112,9 +112,10 @@ document.getElementById('f').addEventListener('submit', function (e) {
   var d = new FormData(f);
   d.append('_subject', 'Nuevo interesado en portabilidad WOM: ' + d.get('Nombre'));
   d.append('_template', 'table');
+  d.append('_cc', 'carvallodonosoandrea@gmail.com');
   if (d.get('Correo')) d.append('_replyto', d.get('Correo'));
   b.disabled = true; b.textContent = 'Enviando…'; err.hidden = true;
-  fetch('https://formsubmit.co/ajax/carvallodonosoandrea@gmail.com', {method: 'POST', body: d, headers: {'Accept': 'application/json'}})
+  fetch('https://formsubmit.co/ajax/miguelantunez24@gmail.com', {method: 'POST', body: d, headers: {'Accept': 'application/json'}})
     .then(function (r) { return r.json(); })
     .then(function (j) {
       if (String(j.success) !== 'true') throw new Error(j.message || 'error');
